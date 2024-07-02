@@ -10,11 +10,11 @@ public class PrintSubArray {
 	
 	public static void printsub(int[] arr) {
 		int N=arr.length;
-		for (int i = 0; i < N; i++) {
-			for (int j = i; j < N; j++) {
+		for (int s = 0; s < N; s++) {
+			for (int e = s; e < N; e++) {
 				
-				for (int j2 = i; j2 <=j; j2++) {
-					System.out.print(arr[j2]+" ");
+				for (int i = s; i <=e; i++) {
+					System.out.print(arr[i]+" ");
 				}
 				System.out.println();
 			}
