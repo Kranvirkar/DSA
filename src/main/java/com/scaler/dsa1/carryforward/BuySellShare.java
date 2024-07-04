@@ -2,22 +2,26 @@ package com.scaler.dsa1.carryforward;
 
 public class BuySellShare {
 
-	public static int maxProfit(final int[] A) {
+    static int maxProfit(int price[], int n)
+    {
         int profit = 0;
-        if (A.length <= 1) return 0;
-        int minCost = A[0];
-        for (int i=1; i<A.length; i++) {
-            if (minCost > A[i]) minCost = A[i];
-            if (profit < A[i] - minCost) {
-                profit = A[i] - minCost;
-            }
+
+        for(int i = 1; i < n; i++)
+        {
+            if(price[i] > price[i - 1])
+                profit += price[i] - price[i -1];
         }
+
         return profit;
     }
-	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
-	}
+
+    public static void main(String args[])
+    {
+        int arr[] = {1, 5, 3, 8, 12}, n = 5;
+
+        System.out.println(maxProfit(arr, n));
+
+    }
 
 }
