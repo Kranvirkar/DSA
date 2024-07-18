@@ -1,4 +1,4 @@
-package com.scaler.dsa1.hashmap;
+package com.scaler.dsa1.hashing;
 
 import java.util.ArrayList;
 import java.util.Arrays;

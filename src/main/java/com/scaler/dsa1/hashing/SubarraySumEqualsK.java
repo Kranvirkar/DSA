@@ -1,6 +1,8 @@
-package com.scaler.dsa1.hashmap;
+package com.scaler.dsa1.hashing;
 
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 public class SubarraySumEqualsK {
 
@@ -42,10 +44,31 @@ public class SubarraySumEqualsK {
         return count;
 
     }
+
+    private static boolean solve1(int[] a,int k) {
+        int N=a.length;
+        int sum=0;
+        Set<Integer> hs =new HashSet<>();
+
+        for (int i = 0; i < N; i++) {
+            sum+=a[i];
+            if ((a[i] == k
+                    || sum == k
+                    || hs.contains(sum-k))){
+                return true;
+            }else {
+                hs.add(sum);
+            }
+        }
+        return false;
+    }
 	public static void main(String[] args) {
 		int[] A= {0,0,0};
 		System.out.println(solve(A, 0));
-
+        int arr[] = { 15, 2, 4, 8, 9, 5, 10, 23 };
+        int n = arr.length;
+        int sum = 23;
+        System.out.println(solve1(arr, sum));
 	}
 
 }
