@@ -1,8 +1,9 @@
-package com.scaler.dsa1.hashmap;
+package com.scaler.dsa1.hashing;
 
-import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class SubArrayWith0sum {
 
@@ -44,11 +45,31 @@ public class SubArrayWith0sum {
 	      }
 	    return ans;
 	  }
+
+
+
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] A = {1, 2, 3, 4, 5};
-		System.out.println(solve(A));
+		int[] A = {1, -1,2, 3, 4, 5};
+		System.out.println(solve(A,0));
+	}
+
+	private static boolean solve(int[] a,int k) {
+		int N=a.length;
+		int sum=0;
+		Set<Integer> hs =new HashSet<>();
+		for (int i = 0; i < N; i++) {
+			sum+=a[i];
+			if ((a[i] == 0
+					|| sum == 0
+					|| hs.contains(sum))){
+				return true;
+			}else {
+				hs.add(sum);
+			}
+		}
+		return false;
 	}
 
 }

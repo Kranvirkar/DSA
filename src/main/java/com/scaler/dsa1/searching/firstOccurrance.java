@@ -4,7 +4,7 @@ public class firstOccurrance {
 
 	public static void main(String[] args) {
 		int[] A = {-5,-5,-3,-3,0,0,1,1,5,5,5,5,8,10,10,15};
-		System.out.println(first(A,-3));
+		System.out.println(first(A,-5));
 	}
 
 	private static int first(int[] a, int k) {
