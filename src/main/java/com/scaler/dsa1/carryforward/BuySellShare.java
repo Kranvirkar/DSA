@@ -10,6 +10,7 @@ public class BuySellShare {
         {
             if(price[i] > price[i - 1])
                 profit += price[i] - price[i -1];
+            System.out.println(profit);
         }
 
         return profit;
