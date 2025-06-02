@@ -1,5 +1,6 @@
 package com.scaler.dsa1.array;
 
+import java.lang.reflect.Method;
 import java.util.Arrays;
 
 public class ArrayinsertAtIndex {
@@ -11,6 +12,11 @@ public class ArrayinsertAtIndex {
         int[] initialValues = new int[]{1, 2, 3, 4, 5, 0};
         System.out.println("Original Array: "+Arrays.toString(initialValues));
 
+        Class objClass = ArrayinsertAtIndex.class;
+        Method[] methods =objClass.getMethods();
+        for (Method method:methods){
+            System.out.println(method.getName());
+        }
         // Insert the element at the specified index
         insertAtIndex(initialValues, sizeOfArray, index, element);
     }
@@ -20,6 +26,6 @@ public class ArrayinsertAtIndex {
             initialValues[i]=initialValues[i-1];
         }
         initialValues[index]=element;
-        System.out.println("Modified arrar: "+Arrays.toString(initialValues));
+        System.out.println("Modified array: "+Arrays.toString(initialValues));
     }
 }

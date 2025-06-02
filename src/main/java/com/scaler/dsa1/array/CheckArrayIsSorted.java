@@ -21,7 +21,6 @@ public class CheckArrayIsSorted {
             if(arr[i-1]>arr[i]){
                 return false;
             }
-
         }
         return true;
     }

@@ -19,10 +19,27 @@ public class RotateArray {
         }
     }
 
-    public static void main(String[] args) {
+    private static void rotateKplace(int[] arr,int k){
+        k=k%arr.length;
+        reversek(arr,0,k-1);
+        reversek(arr,k, arr.length-1);
+        reversek(arr,0, arr.length-1);
 
+    }
+
+    private static void reversek(int[] arr, int start, int end) {
+        while (start<end){
+            int temp=arr[start];
+            arr[start++]=arr[end];
+            arr[end--]=temp;
+        }
+    }
+
+    public static void main(String[] args) {
         int d=2;
         rotateArr(arr,d);
+        System.out.println(Arrays.toString(arr));
+        rotateKplace(arr,d);
         System.out.println(Arrays.toString(arr));
     }
 }

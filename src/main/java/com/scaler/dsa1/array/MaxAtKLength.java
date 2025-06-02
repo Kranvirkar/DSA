@@ -2,7 +2,7 @@ package com.scaler.dsa1.array;
 
 import java.util.ArrayList;
 
-public class MacAtKLength {
+public class MaxAtKLength {
     public static ArrayList<Integer> max_of_subarrays(int arr[], int k) {
         int n =arr.length;
         ArrayList<Integer> list =new ArrayList<>();

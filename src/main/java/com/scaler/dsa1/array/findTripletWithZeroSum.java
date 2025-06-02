@@ -3,7 +3,7 @@ package com.scaler.dsa1.array;
 import java.util.Arrays;
 
 public class findTripletWithZeroSum {
-    public boolean findTripletWithZeroSum(int[] arr) {
+    public static boolean findTripletWithZeroSum(int[] arr) {
         int n = arr.length;
         Arrays.sort(arr);  // Sort the array
 
@@ -30,14 +30,14 @@ public class findTripletWithZeroSum {
     }
 
     public static void main(String[] args) {
-        findTripletWithZeroSum solution = new findTripletWithZeroSum();
+
 
         int[] arr1 = {0, -1, 2, -3, 1};
         int[] arr2 = {1, 2, 3};
         int[] arr3 = {-5, 3, 2, -1, 0, 1};
 
-        System.out.println(solution.findTripletWithZeroSum(arr1)); // Output: true
-        System.out.println(solution.findTripletWithZeroSum(arr2)); // Output: false
-        System.out.println(solution.findTripletWithZeroSum(arr3)); // Output: true
+        System.out.println(findTripletWithZeroSum(arr1)); // Output: true
+        System.out.println(findTripletWithZeroSum(arr2)); // Output: false
+        System.out.println(findTripletWithZeroSum(arr3)); // Output: true
     }
 }
