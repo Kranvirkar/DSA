@@ -5,7 +5,8 @@ import java.util.List;
 
 public class CarryForward {
     public static void main(String[] args) {
-        int[] A = {9};
+
+        int[] A = {2,9};
         int[] B = {9, 9, 9};
         int carry = 1;
         System.out.println(cForward(B, carry));
@@ -21,7 +22,9 @@ public class CarryForward {
 
         if (carry == 1) {
             list.add(1);
+
         }
+  }
 
         for (int i = 0; i < a.length; i++) {
             list.add(a[i]);
