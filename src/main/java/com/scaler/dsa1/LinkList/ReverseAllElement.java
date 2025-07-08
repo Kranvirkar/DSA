@@ -1,5 +1,7 @@
 package com.scaler.dsa1.LinkList;
 
+import java.util.ArrayList;
+
 public class ReverseAllElement {
 
     public static void main(String[] args) {
@@ -14,19 +16,37 @@ public class ReverseAllElement {
         // 0 based
 
         System.out.println("==============After===============");
+
         displayList(head); // Display the list again after insertion
+        displayList(revList(head));
+    }
+    //optimised Time complexity: O(n)
+    //          Space complexity: O(1)
+    private static Node reverseElement(Node head) {
+        Node prev = null,next=null,current=head;
+
+        while (current != null) {
+            next = current.next; // Save next node
+            current.next = prev;        // Reverse the link
+            prev = current;             // Move rh to current node
+            current = next;           // Move head to next node
+        }
+        return prev; // rh is the new head of the reversed list
     }
 
-    private static Node reverseElement(Node head) {
-        Node temp =head,rh=null;
-        while (head!=null){
-            temp=temp.next;
-            //head.next=null;
-            head.next=rh;
-            rh=head;
-            head=temp;
+    //brute force
+    static Node revList(Node head)
+    {
+        ArrayList<Integer> arr = new ArrayList<Integer>();
+        for (Node curr = head; curr != null;
+             curr = curr.next) {
+            arr.add(curr.data);
         }
-        return rh;
+        for (Node curr = head; curr != null;
+             curr = curr.next) {
+            curr.data = arr.remove(arr.size() - 1);
+        }
+        return head;
     }
 
     // Method to display the linked list
