@@ -1,0 +1,64 @@
+package com.scaler.dsa1.twoPointer;
+
+import java.util.*;
+
+public class threeSumK {
+    public static List<List<Integer>> threeSum(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
+        Arrays.sort(nums); // Step 1: Sort the array
+
+        for (int i = 0; i < nums.length - 2; i++) {
+            // Skip duplicates for the first element
+            if (i > 0 && nums[i] == nums[i - 1]) continue;
+
+            int target = -nums[i];
+            int left = i + 1, right = nums.length - 1;
+
+            while (left < right) {
+                int sum = nums[left] + nums[right];
+
+                if (sum == target) {
+                    // Add the triplet to the result
+                    result.add(Arrays.asList(nums[i], nums[left], nums[right]));
+
+                    // Skip duplicates for the second and third elements
+                    while (left < right && nums[left] == nums[left + 1]) left++;
+                    while (left < right && nums[right] == nums[right - 1]) right--;
+
+                    left++;
+                    right--;
+                } else if (sum < target) {
+                    left++; // Increase the sum
+                } else {
+                    right--; // Decrease the sum
+                }
+            }
+        }
+        return result;
+    }
+
+
+    public List<List<Integer>> threeSum1(int[] nums) {
+        Set<List<Integer>> resultSet = new HashSet<>();
+        Arrays.sort(nums); // Sort the array for consistency
+
+        for (int i = 0; i < nums.length - 2; i++) {
+            int target = -nums[i];
+            Set<Integer> seen = new HashSet<>();
+            for (int j = i + 1; j < nums.length; j++) {
+                int complement = target - nums[j];
+                if (seen.contains(complement)) {
+                    resultSet.add(Arrays.asList(nums[i], nums[j], complement));
+                }
+                seen.add(nums[j]);
+            }
+        }
+
+        return new ArrayList<>(resultSet);
+    }
+    public static void main(String[] args) {
+        System.out.println(threeSum(new int[]{-1, 0, 1, 2, -1, -4}));
+        System.out.println(threeSum(new int[]{0, 1, 1}));
+        System.out.println(threeSum(new int[]{0, 0, 0}));
+    }
+}

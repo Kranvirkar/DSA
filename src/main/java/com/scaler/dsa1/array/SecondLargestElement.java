@@ -1,6 +1,8 @@
 package com.scaler.dsa1.array;
 
 public class SecondLargestElement {
+
+    //T.C-	O(n)	S.C -O(1)
     public static int print2largest(int arr[]) {
     int n=arr.length;
     int prev = 0,max=Integer.MIN_VALUE;

@@ -3,8 +3,11 @@ package com.scaler.dsa1.contest;
 public class FlightBooking {
 
     /*There are B flights labelled from 1 to B.
-    You are given a 2-D array of flight bookings A where A[i] represents a booking for flights Numbers from A[i][0] A[i][1] (inclusive) with A[i][2] seats reserved for each flight in the range.
-    Written an array of a length B, where each element at index, I is the total number of seats reserved for flights
+    You are given a 2-D array of flight bookings A where A[i] represents a booking for flights
+     Numbers from A[i][0] A[i][1] (inclusive) with A[i][2] seats reserved for each flight in the
+      range.
+    Written an array of a length B, where each element at index, I is the total number of seats
+    reserved for flights
     Note for example is  A[i]={2,4,3} that means in every flight from range 2 to 4, 3 seats are reserved
             Input
     A= [[1,2,10],[2,3,20],[2,5,25]]

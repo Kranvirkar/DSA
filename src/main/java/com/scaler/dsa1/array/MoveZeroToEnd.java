@@ -9,7 +9,30 @@ public class MoveZeroToEnd {
         System.out.println("Original Array:"+Arrays.toString(arr));
 
         System.out.println("Modified Array:"+Arrays.toString(moveZero(arr)));
+        System.out.println("Modified Array:"+Arrays.toString(moveZeroToEnd(arr)));
     }
+
+    private static int[] moveZeroToEnd(int[] arr){
+        int temp=0;
+        for (int i = 0; i < arr.length; i++) {
+            if(arr[i]!=0){
+                arr[temp]=arr[i];
+                temp++;
+            }
+        }
+        for (int i = temp; i < arr.length; i++) {
+            arr[i]=0;
+        }
+        return arr;
+    }
+
+
+
+
+
+
+
+
 
     private static int[] moveZero(int[] arr) {
         int count=0;
