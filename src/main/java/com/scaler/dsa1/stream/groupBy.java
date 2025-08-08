@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 public class groupBy {
     public static void main(String[] args) {
-        List<Employee> employees = Arrays.asList(
+        List<Employee> employees =List.of(
                 new Employee(1,"Alice", 70000, "IT"),
                 new Employee(3,"Bob", 90000, "Finance"),
                 new Employee(2,"Eve", 823000, "Marketing"),

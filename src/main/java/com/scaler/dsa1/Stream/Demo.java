@@ -1,4 +1,4 @@
-package com.scaler.dsa1.Stream;
+package com.scaler.dsa1.stream;
 
 public class Demo {
 

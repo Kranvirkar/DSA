@@ -1,4 +1,4 @@
-package com.scaler.dsa1.java8;
+package com.scaler.dsa1.stream;
 
 import java.util.Comparator;
 import java.util.List;
